@@ -4,7 +4,7 @@ import { AuthService } from '../services/auth.service';
 export class AuthController {
     // Metodo login: valida credenciales y genera token JWT
     // Entrada: email y password del usuario
-    // Salida: token JWT y rol del usuario
+    // Salida: token JWT y rol del usuario.
     static async login(req: Request, res: Response) {
         try {
             const { email, password } = req.body;

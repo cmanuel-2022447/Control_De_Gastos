@@ -1,6 +1,3 @@
-// Define los endpoints para login de usuarios
-// POST /api/auth/login - Autentica usuario con email y password
-
 import { Router } from 'express';
 import { AuthController } from '../controller/auth.controller';
 
