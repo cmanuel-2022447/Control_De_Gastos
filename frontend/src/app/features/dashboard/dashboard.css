@@ -1,0 +1,155 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: #edf2f7;
+}
+
+/* Barra lateral azul institucional */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #0b3f76 0%, #0d4b8e 100%);
+  color: #fff;
+  padding: 24px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-header {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
+  padding: 4px 8px 24px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #dfeaf9;
+  font-size: 1.05rem;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.logout-button {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 8px;
+  padding: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Panel Principal */
+.main-panel {
+  flex: 1;
+  background: #edf2f7;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor blanco superior exacto como tu referencia */
+.top-white-container {
+  background: #ffffff;
+  padding: 30px 48px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.top-white-container h2 {
+  font-size: 2.15rem;
+  margin: 0 0 4px 0;
+  color: #1a2b4c;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.top-white-container .subtitle {
+  font-size: 0.98rem;
+  color: #718096;
+  margin: 0;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sección de contenido */
+.content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Tarjeta central */
+.card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(31, 62, 88, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  padding: 40px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #1a2b4c;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card p {
+  color: #4a5568;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card button {
+  border: none;
+  background: #e2fbe8;
+  color: #276749;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #c6f6d5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
