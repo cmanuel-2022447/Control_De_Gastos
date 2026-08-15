@@ -1,4 +1,4 @@
-// Modelo de Usuario para la autenticacion
+// Modelo de Usuario para la autenticacion.
 // Define la estructura de datos de los usuarios en la aplicacion
 
 export interface Usuario {
