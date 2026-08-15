@@ -1,4 +1,4 @@
-// TODO: Implementar conexion a PostgreSQL
+// TODO: Implementar conexion a PostgreSQL.
 export const getAllExpenses = async () => {
     // Datos simulados para desarrollo
     return [{ id: 1, description: 'Gasto de ejemplo', amount: 100 }];

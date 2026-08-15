@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { getAllExpenses, saveExpense } from '../services/expensive.service';
 
-// Obtiene lista completa de gastos registrados
+// Obtiene lista completa de gastos registrados.
 export const getExpenses = async (req: Request, res: Response) => {
     try {
         const data = await getAllExpenses();
