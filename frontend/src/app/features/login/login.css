@@ -1,0 +1,167 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Fondo con desvanecido (degradado) elegante */
+  background: linear-gradient(135deg, #0b2545 0%, #134074 50%, #1d5f9e 100%);
+  padding: 20px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.login-header {
+  /* Desvanecido (degradado) para la parte superior de Control de Gastos */
+  background: linear-gradient(180deg, #134074 0%, #0b2545 100%);
+  padding: 35px 20px 25px;
+  text-align: center;
+}
+
+.money-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.money-emoji {
+  font-size: 1.3rem;
+}
+
+.login-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-subtitle {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-panel {
+  background: #ffffff;
+  padding: 28px 26px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* Letras de Correo y Contraseña en color azul */
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #134074;
+  margin-bottom: 6px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 12px 14px;
+  font-size: 0.98rem;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #134074;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(19, 64, 116, 0.15);
+}
+
+.btn-login {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #134074;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 13px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 6px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-login:hover {
+  background: #0b2545;
+}
+
+.error-message {
+  color: #dc2626;
+  background: #fee2e2;
+  border-radius: 6px;
+  padding: 8px;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.test-users-card {
+  background: #f8fafc;
+  padding: 16px 26px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  color: #475569;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.test-users-card p {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.test-user-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  min-width: 60px;
+  text-align: center;
+  background-color: #134074;
+  color: #ffffff;
+}
