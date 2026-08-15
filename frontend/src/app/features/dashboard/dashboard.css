@@ -82,7 +82,7 @@ body {
   flex-direction: column;
 }
 
-/* Contenedor blanco superior exacto como tu referencia */
+/* Contenedor blanco superior exacto como tu referencia. */
 .top-white-container {
   background: #ffffff;
   padding: 30px 48px;
