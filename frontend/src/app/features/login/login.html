@@ -1,55 +1,53 @@
 <div class="login-container">
   <div class="login-box">
     <div class="login-header">
-      <div class="money-icon">
-        <span class="money-emoji">💰</span>
+      <div class="brand-lockup">
+        <div class="logo-frame">
+          <img src="assets/logo.png" alt="Logo de la empresa" />
+        </div>
+        <span class="brand-kicker">Tu dinero, con intención</span>
       </div>
-      <h1>Control de Gastos</h1>
-      <div class="login-subtitle">Gestiona tus gastos de forma fácil</div>
+      <h1>Control de<br /><em>Gastos</em></h1>
+      <div class="login-subtitle">Una vista más clara de cada decisión.</div>
     </div>
 
     <div class="form-panel">
       <form (ngSubmit)="login()">
         <div class="form-group">
-          <label for="email">Correo Electrónico</label>
+          <label for="login">Correo o usuario</label>
           <input 
-            type="email" 
-            id="email" 
-            [(ngModel)]="email" 
-            name="email" 
-            placeholder="admin@kinal.com"
+            type="text" 
+            id="login" 
+            [(ngModel)]="loginValue" 
+            name="login" 
+            placeholder="correo@ejemplo.com o usuario"
             required
           />
         </div>
 
-        <div class="form-group">
+        <div class="form-group password-group">
           <label for="password">Contraseña</label>
           <input 
-            type="password" 
+            [type]="mostrarPassword ? 'text' : 'password'" 
             id="password" 
             [(ngModel)]="password" 
             name="password" 
             placeholder="********"
             required
           />
+          <button type="button" class="password-toggle" (click)="alternarPassword()" [attr.aria-label]="mostrarPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'">
+            {{ mostrarPassword ? 'Ocultar' : 'Mostrar' }}
+          </button>
         </div>
 
-        <button type="submit" class="btn-login">Iniciar Sesión</button>
+        <button type="submit" class="btn-login" [disabled]="cargando">
+          <span>{{ cargando ? 'Comprobando acceso...' : 'Iniciar Sesión' }}</span>
+          <span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
       </form>
 
       <div *ngIf="error" class="error-message">{{ error }}</div>
     </div>
 
-    <div class="test-users-card">
-      <p>Usuarios de prueba:</p>
-      <div class="test-user-item">
-        <span class="badge admin">Admin</span>
-        <span>admin@kinal.com / Admin123</span>
-      </div>
-      <div class="test-user-item">
-        <span class="badge user">Usuario</span>
-        <span>usuario@kinal.com / Usuario123</span>
-      </div>
-    </div>
   </div>
 </div>

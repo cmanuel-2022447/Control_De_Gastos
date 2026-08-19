@@ -12,9 +12,11 @@ import { AuthService } from '../../core/services/auth.service';
   styleUrl: './login.css'
 })
 export class LoginComponent implements AfterViewInit {
-  email: string = '';
+  loginValue: string = '';
   password: string = '';
   error: string = '';
+  mostrarPassword = false;
+  cargando = false;
 
   constructor(
     private authService: AuthService,
@@ -29,20 +31,30 @@ export class LoginComponent implements AfterViewInit {
   }
 
   login(): void {
-    if (!this.email || !this.password) {
+    if (!this.loginValue || !this.password) {
       this.error = 'Por favor completa todos los campos';
       return;
     }
 
-    this.authService.login(this.email, this.password).subscribe({
+    this.cargando = true;
+    this.error = '';
+    this.authService.login(this.loginValue, this.password).subscribe({
       next: (response) => {
         console.log('Login exitoso:', response);
         this.router.navigate(['/bienvenidos']);
       },
       error: (err) => {
         console.error('Error en login:', err);
-        this.error = 'Credenciales inválidas. Intenta de nuevo.';
+        this.cargando = false;
+        this.error = err.status === 503
+          ? 'La base de datos no está disponible.'
+          : 'Credenciales inválidas. Intenta de nuevo.';
       }
     });
   }
+
+  alternarPassword(): void {
+    this.mostrarPassword = !this.mostrarPassword;
+  }
+
 }
