@@ -13,10 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
-const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
+const jwt_1 = require("../../../util/jwt");
 // TODO: Conectar a PostgreSQL pool (ej. import { pool } from '../../../config/db');
-const SECRET_KEY = 'tu_clave_secreta_super_segura';
 // Usuarios de prueba con contraseñas hasheadas usando bcryptjs
 // En producción, estos datos vendrían de la base de datos PostgreSQL
 const USERS_DATABASE = [
@@ -41,7 +40,7 @@ class AuthService {
     }
     // Valida email y password contra credenciales registradas
     // Usa bcryptjs para comparar contraseñas de forma segura
-    // Genera JWT con vencimiento de 1 hora
+    // Genera JWT con vencimiento de 5 horas
     // Retorna token y rol del usuario o null si fallan credenciales
     static login(email, password) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -62,7 +61,7 @@ class AuthService {
                 }
                 // Generar JWT con datos del usuario
                 const userPayload = { id: user.id, email: user.email, rol: user.rol };
-                const token = jsonwebtoken_1.default.sign(userPayload, SECRET_KEY, { expiresIn: '1h' });
+                const token = (0, jwt_1.generateToken)(userPayload);
                 return { token, rol: user.rol };
             }
             catch (error) {

@@ -5,6 +5,8 @@
 import express from 'express';
 import cors from 'cors';
 import authRoutes from './src/modules/auth/routes/auth.routes';
+import expensiveRoutes from './src/modules/expensive/routes/expensive.routes';
+import { errorHandler } from './src/middleware/errorHandles';
 
 // Crear instancia de Express
 const app = express();
@@ -17,5 +19,7 @@ app.use(express.json());
 
 // Registrar rutas de autenticacion bajo /api/auth
 app.use('/api/auth', authRoutes);
+app.use('/api/expensive', expensiveRoutes);
+app.use(errorHandler);
 
 export default app;

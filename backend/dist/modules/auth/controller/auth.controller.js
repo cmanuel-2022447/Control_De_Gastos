@@ -14,7 +14,7 @@ const auth_service_1 = require("../services/auth.service");
 class AuthController {
     // Metodo login: valida credenciales y genera token JWT
     // Entrada: email y password del usuario
-    // Salida: token JWT y rol del usuario
+    // Salida: token JWT y rol del usuario.
     static login(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

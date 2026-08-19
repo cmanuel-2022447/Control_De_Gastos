@@ -123,16 +123,6 @@ pnpm run build
 # Los archivos compilados estarán en dist/
 ```
 
-## Usuarios de Prueba
-
-La aplicación incluye usuarios de prueba para desarrollo:
-
-| Rol | Email | Contraseña |
-|-----|-------|------------|
-| Admin | admin@kinal.com | Admin123 |
-| Usuario | usuario@kinal.com | Usuario123 |
-
-
 ## Módulos Principales
 
 ### Autenticación (auth)
@@ -144,13 +134,11 @@ Componentes:
 - **controller/auth.controller.ts**: Maneja peticiones HTTP POST /login
   - Recibe email y password
   - Delega validacion al servicio
-  - Retorna token JWT y rol
+  - Retorna token JWT
 
 - **services/auth.service.ts**: Logica de autenticacion
   - Valida credenciales contra base de datos
-  - Genera JWT con vencimiento 1 hora
-  - Usuarios de prueba: admin@kinal.com, usuario@kinal.com
-  - TODO: Integrar PostgreSQL real
+  - Requiere una conexión activa a PostgreSQL
 
 - **routes/auth.routes.ts**: Definicion de endpoints
   - POST /api/auth/login - Autentica usuario
@@ -166,7 +154,7 @@ Componentes:
 - Interfaz de autenticacion
 - Recibe email y password
 - Valida con backend
-- Muestra usuarios de prueba
+  - Permite ingresar credenciales registradas en PostgreSQL
 - Genera sesion con token JWT
 - Ruta: `/` (raiz)
 
@@ -191,8 +179,8 @@ Componentes:
 3. Usuario ingresa email y password
 4. Frontend envia POST /api/auth/login
 5. Backend valida credenciales en AuthService
-6. Backend genera JWT con vencimiento 1 hora
-7. Backend retorna token y rol
+6. Backend genera JWT
+7. Backend retorna token
 8. Frontend almacena token en sesion
 9. Frontend redirige a /bienvenidos
 10. Se carga BienvenidaComponent con datos del usuario
